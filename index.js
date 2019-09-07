@@ -18,9 +18,12 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('连接成功被建立');
+    // 连接关闭
+    sequelize.close();
+    console.log("已经关闭")
   })
   .catch(err => {
     console.error('连接建立失败:', err);
   });
 
-
+  
